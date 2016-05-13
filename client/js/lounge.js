@@ -275,7 +275,20 @@ $(function() {
 
 	function renderChannelMessages(data) {
 		var documentFragment = buildChannelMessages(data.id, data.messages);
-		chat.find("#chan-" + data.id + " .messages").append(documentFragment);
+		var channel = chat.find("#chan-" + data.id + " .messages").append(documentFragment);
+
+		if (data.firstUnread > 0) {
+			var first = $("#msg-" + data.firstUnread);
+
+			// TODO: If the message is far off in the history, we still need to append the marker into DOM
+			if (!first.length) {
+				channel.prepend(render("unread_marker"));
+			} else {
+				first.before(render("unread_marker"));
+			}
+		} else {
+			channel.append(render("unread_marker"));
+		}
 	}
 
 	function renderChannelUsers(data) {
@@ -689,10 +702,16 @@ $(function() {
 		}
 
 		viewport.removeClass("lt");
-		$("#windows .active")
+		var lastActive = $("#windows .active");
+
+		lastActive
 			.removeClass("active")
 			.find(".chat")
 			.unsticky();
+
+		lastActive
+			.find(".unread-marker")
+			.appendTo(lastActive.find(".messages"));
 
 		var chan = $(target)
 			.addClass("active")
@@ -981,7 +1000,7 @@ $(function() {
 	setInterval(function() {
 		chat.find(".chan:not(.active)").each(function() {
 			var chan = $(this);
-			if (chan.find(".messages").children().slice(0, -100).remove().length) {
+			if (chan.find(".messages .msg:not(.unread-marker)").slice(0, -100).remove().length) {
 				chan.find(".show-more").addClass("show");
 			}
 		});

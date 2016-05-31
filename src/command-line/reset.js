@@ -25,6 +25,7 @@ program
 			var salt = bcrypt.genSaltSync(8);
 			var hash = bcrypt.hashSync(password, salt);
 			user.password = hash;
+			user.token = null; // Will be regenerated when the user is loaded
 			fs.writeFileSync(
 				file,
 				JSON.stringify(user, null, "  ")

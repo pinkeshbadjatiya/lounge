@@ -18,6 +18,8 @@ const templates = require("../views");
 const socket = require("./socket");
 const constants = require("./constants");
 
+$('input,textarea').asciimoji();
+
 $(function() {
 	var sidebar = $("#sidebar, #footer");
 	var chat = $("#chat");

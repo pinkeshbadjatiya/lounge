@@ -20,6 +20,8 @@ const constants = require("./constants");
 
 $('input,textarea').asciimoji();
 
+$('input,textarea').asciimoji();
+
 $(function() {
 	var sidebar = $("#sidebar, #footer");
 	var chat = $("#chat");

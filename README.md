@@ -7,11 +7,11 @@
 [![Dependencies Status](https://img.shields.io/david/thelounge/lounge.svg)](https://david-dm.org/thelounge/lounge)
 [![Developer Dependencies Status](https://img.shields.io/david/dev/thelounge/lounge.svg)](https://david-dm.org/thelounge/lounge?type=dev)
 
-    ####################################
-    ####   Whats new in this fork?  ####
-    ####   - ASCIImoji support      ####
-    ####   - Autostart script (AWS) ####
-    ####################################
+    ########################################################
+    ####   Whats new in this fork?  			####
+    ####   - ASCIImoji support(Temporarily disabled)    ####
+    ####   - Autostart script (AWS) 			####
+    ########################################################
 
 The Lounge is a modern web IRC client designed for self-hosting.
 

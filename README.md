@@ -9,7 +9,7 @@
 
     ########################################################
     ####   Whats new in this fork?  			####
-    ####   - ASCIImoji support(Temporarily disabled)    ####
+    ####   - ASCIImoji support(Disabled Temporarily)    ####
     ####   - Autostart script (AWS) 			####
     ########################################################
 

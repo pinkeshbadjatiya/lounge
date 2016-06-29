@@ -10,6 +10,7 @@
     ####################################
     ####   Whats new in this fork?  ####
     ####   - ASCIImoji support      ####
+    ####   - Autostart script (AWS) ####
     ####################################
 
 The Lounge is a modern web IRC client designed for self-hosting.
